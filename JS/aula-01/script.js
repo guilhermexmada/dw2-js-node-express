@@ -30,3 +30,34 @@ let idade = 30;
 // CONST: variável constante, ou seja, não pode ser alterada após a declaração (não pode ser reatribuídam, mas sempre deve ser inicializado na declaração); 
 const cidade = "São Paulo";
 //const cidade = "Registro"; 
+
+//---
+
+//funções com múltiplos parâmetros
+const n1 = 10;
+const n2 = 5;
+
+function mult(a, b){
+    const res = a * b;
+    document.write(`<p>${a} * ${b} = ${res}</p>`);
+}
+
+mult(n1, n2); //passando os argumentos na mesma ordem  dos parâmetros
+
+//função com retorno; permite distribuir melhor as responsabilidades do código
+function div(c, d){
+    return c / d; //retorna a soma dos parâmetros
+}
+
+document.write(`<p>${n1} / ${n2} = ${div(n1,n2)}</p>`);
+
+//função com diferentes retornos
+function parImpar(e){
+    if(e % 2 == 0){
+        return 'Par';
+    } else{
+        return 'Ímpar';
+    }
+}
+
+document.write(`<p>${n1} é um número ${parImpar(n1)}</p>`);
