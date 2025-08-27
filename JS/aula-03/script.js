@@ -25,3 +25,7 @@ strada.marca = "Fiat";
 strada.modelo = "Coal";
 strada.ano = "2025";
 document.write(`Carro Strada | ${strada.marca} | ${strada.modelo} | ${strada.ano} | ${strada.buzinar()} `);
+
+// adicionando propriedades/métodos extras a um objeto 
+strada.motor = "V2";
+strada.turbo = () => "Vrummm!!!";
