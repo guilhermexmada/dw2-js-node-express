@@ -1,11 +1,11 @@
 
 // 01
 const data = new Date();
-document.write(`<p> Exibindo a data atual completa: </p>`);
+document.write(`<p> Data atual completa: </p>`);
 document.write(`<p> ${data} </p> <hr>`);
 
 // 02
-let promptValor = prompt(`Digite o valor da sua compra: `);
+let promptValor = prompt(`Digite o valor da sua compra em R$: `);
 let verificarValor = Number(promptValor);
 let compraInternacional;
 
@@ -28,7 +28,7 @@ const compraInternacionalReal = conversaoReal.toLocaleString("pt-br", {
     currency: "BRL"
 });
 document.write(`<p> 
-    O valor da sua compra convertida para real,
+    O valor da sua compra em reais,
     na cotação de 2025-09-05 (R$5,42 = $1) é de: ${compraInternacionalReal}. 
     </p> <hr>`);
 
@@ -42,4 +42,4 @@ const dataEntrega = formatarEntrega.toLocaleDateString("pt-br", {
     year: "numeric"
 });
 
-document.write(`<p> A data estimada da sua entrega é: ${dataEntrega} </p>`);
+document.write(`<p> Data estimada da entrega : ${dataEntrega} </p>`);
