@@ -8,10 +8,21 @@
 <body>
     <h1>EJS : renderização de conteúdo HTML e JS</h1>
     <hr>
-    <p>Bem-vindo à página de clientes!</p>
+    <p>Bem-vindo à página de produtos!</p>
     <ul>
-        <li><a href="/">>Voltar</a></li>
-        <li><a href="/clientes">>Clientes</a></li>
+        <li><a href="/"> < Voltar</a></li>
+        <li><a href="/clientes"> > Clientes</a></li>
+        <li><a href="/perfil"> > Perfil</a></li>
+        <li><a href="/pedidos">>Pedidos</a></li>
+    </ul>
+
+    <h2>Lista de produtos</h2>
+    <ul>
+        <!-- Percorrendo lista de produtos com forEach -->
+         <!-- Tag EJS não se mistura com tag HTML -->
+       <% produtos.forEach((produto)=>{ %>
+            <li> <%= produto %> </li>
+       <% }) %>
     </ul>
 </body>
 </html>

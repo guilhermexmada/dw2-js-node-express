@@ -20,27 +20,24 @@
     <p>Bem-vindo à página de clientes!</p>
     <ul>
         <li><a href="/"> < Voltar</a></li>
-        <li><a href="/produtos"> > Produtos</a></li>
-        <li><a href="/perfil"> > Perfil</a></li>
-        <li><a href="/pedidos">>Pedidos</a></li>
-
+        <li><a href="/produtos">>Produtos</a></li>
+        <li><a href="/clientes">>Clientes</a></li>
+        <li><a href="/perfil">>Perfil</a></li>
     </ul>    
     <hr>
-    <h2>Tabela de clientes</h2>
+    <h2>Tabela de pedidos</h2>
         <table class="table table-bordered table-hover">
                 <thead class="table-dark">
-                    <th>nome</th>
-                    <th>email</th>
-                    <th>cpf</th>
-                    <th>endereco</th>
+                    <th>chamado</th>
+                    <th>tipo</th>
+                    <th>valor</th>
                 </thead>
                  <tbody>
-                    <% clientes.forEach((cliente) => { %>
+                    <% pedidos.forEach((pedido) => { %>
                      <tr>
-                         <td><%= cliente.nome %></td>  <!-- < % = usa quando é apenas variável | < % usa quando tem outra estrutura junto -->
-                         <td><%= cliente.email %></td>
-                         <td><%= cliente.cpf %></td>
-                         <td><%= cliente.endereco %></td>
+                         <td><%= pedido.numero %></td>  <!-- < % = usa quando é apenas variável | < % usa quando tem outra estrutura junto -->
+                         <td><%= pedido.servico %></td>
+                         <td><%= pedido.valor %></td>
                      </tr>
                         <% }) %>
                  </tbody>
