@@ -1,30 +1,66 @@
-let vetor = ["laranja","maçã","banana"];
-document.write(`<p>Nosso vetor: ${vetor}</p>`);
+// objetos literais possuem atributos e métodos
 
-// adicionando item ao vetor | indíces que não existem adicionam elementos, índices que já existem substituem elementos
-vetor[3] = "morango";
-vetor[0] = "pera"; 
-document.write(`<p>Nosso vetor: ${vetor}</p>`);
+// objetos literais não derivam de classes
 
-// método PUSH insere um novo elemento no final do vetor
-vetor.push("abacaxi");
-document.write(`<p>Nosso vetor: ${vetor}</p>`);
+// declarando e verificando tipo de um objeto
+const pessoa = {};
+document.write(typeof pessoa);
 
-// método UNSHIFT insere um novo elemento no início do vetor
-vetor.unshift("laranja");
-document.write(`<p>Nosso vetor: ${vetor}</p>`);
+// declarando um objeto com atributos e métodos
+const carro = {
+  modelo: "gol",
+  cor: "vermelho",
+  acelerar() {
+    return "Acelerando...";
+  },
+  frear() {
+    return "Freando...";
+  },
+};
 
-// método LENGHT conta o número de elementos do vetor
-let numeros = [6, 8, 2, 9, 3, 800, 200];
-document.write(`<p>Nosso novo vetor: ${numeros}</p>`);
-document.write(`Nosso novo vetor tem ${numeros.length} elementos`);
+// exibindo atributos e executando métodos do objeto
+document.write(`<p>Modelo do carro: ${carro.modelo}</p>`);
+document.write(`<p>Cor do carro: ${carro.cor}</p>`);
+document.write(`<p>${carro.acelerar()}</p>`);
+document.write(`<p>${carro.frear()}</p>`);
 
-// método SORT ordena o vetor | serve para strings | para números, precisa passar parâmetros pois se não se baseará apenas no primeiro algarismo
-let numerosCrescente = numeros.sort((a,b) => a - b); // parâmetros para sort numérico : arrow function | (2 identificadores) => verificação se o primeiro é menor que o segundo 
-let vetorCrescente = vetor.sort();
-document.write(`<p>Nosso novo vetor: ${numerosCrescente}</p>`); 
-document.write(`<p>Nosso antigo vetor: ${vetorCrescente}</p>`);  
+// novo objeto
+const produto = {
+  nome: "Computador",
+  marca: "Lenovo",
+  preco: 3000,
+  descricao: "Pc moderno com bom desempenho",
+};
 
-// ordenando os vetores em ordem DECRESCENTE
-let numerosDecrescente = numeros.sort((a,b) => b - a); // arrow function | (2 identificadores) => verificação se o segundo é menor que o primeiro 
-document.write(`<p>Nosso novo vetor: ${numerosDecrescente}</p>`); 
+document.write(
+  `<p>O ${produto.nome} da marca ${produto.marca} custa apenas R$ ${produto.preco},00 ! É um ${produto.descricao}.</p>`
+);
+
+// criando um array de objetos
+const listaProdutos = [
+  {
+    nome: "Computador",
+    marca: "Lenovo",
+    preco: 3000,
+    descricao: "Pc moderno com bom desempenho",
+  },
+  {
+    nome: "Tablet",
+    marca: "Samsung",
+    preco: 2000,
+    descricao: "Ótima velocidade de processamento",
+  },
+  {
+    nome: "Celular",
+    marca: "Apple",
+    preco: 6000,
+    descricao: "Ultra resistente",
+  },
+];
+
+// iterando o array de objetos com FOREACH
+listaProdutos.forEach(item => {
+    document.write(`<p>${item.nome} | ${item.marca} | R$ ${item.preco},00 | ${item.descricao}</p>`);
+});
+
+// ALT + ENTER = envelopamento de tag
