@@ -1,12 +1,22 @@
-const express = require("express"); //importando o Express (framework):
+import express from "express"; //importando o Express de acordo com ES6 Modules (com import())
 
-const app = express(); //Iniciando o Express na vaiavel "APP":
+const app = express(); //Iniciando o Express na vaiavel 'app'
+
+import ClientesController from "./controllers/ClientesController.js" //  importando os Controllers (onde estão as rotas e onde são tratadas as requisições) - precisa da extensão '.js'
+import PedidosController from "./controllers/PedidosController.js" //  importando os Controllers (onde estão as rotas e onde são tratadas as requisições) - precisa da extensão '.js'
+import ProdutosController from "./controllers/ProdutosController.js" //  importando os Controllers (onde estão as rotas e onde são tratadas as requisições) - precisa da extensão '.js'
 
 // configurando o EJS:
 app.set("view engine", "ejs");
 
 // definindo a pasta PUBLIC para Arquivos Estáticos
 app.use(express.static("public"));
+
+// definindo o uso das rotas dentro de controllers
+app.use("/", ClientesController);
+app.use("/", ProdutosController);
+app.use("/", PedidosController);
+
 
 //criando a primeira rota do site (rota principal):
 // REQ = trata a REQUISIÇÂO
@@ -15,46 +25,6 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-// ROTA de produtos
-app.get("/produtos", (req, res) => {
-  // const produtos = ["Computador", "Celular", "Tablet", "Notebook"];
-
-  //array de objetos com os produtos:
-  const produtos = [
-    { nome: "Celular", preco: 3000 },
-    { nome: "Computador", preco: 5000 },
-    { nome: "Tablet", preco: 2500 },
-    { nome: "Notebook", preco: 3000 },
-  ];
-  res.render("produtos", {
-    produtos: produtos,
-  });
-});
-
-// criando a rota de clientes
-app.get("/clientes", (req, res) => {
-  const clientes = [
-    {
-      nome: "Shimada",
-      CPF: "123.456.789-22",
-      endereco: "Rua Dona Gertrudes, 190",
-    },
-    {
-      nome: "Myrella",
-      CPF: "125.456.134-45",
-      endereco: "Rua Marcelo Gomes, 231",
-    },
-    {
-      nome: "Mattew",
-      CPF: "879.768.435-87",
-      endereco: "Rua Pindamonhngaba, 600",
-    },
-    { nome: "Raviel", CPF: "132.542.645-11", endereco: "Rua Lero Covas, 32" },
-  ];
-  res.render("clientes", {
-    clientes: clientes,
-  });
-});
 
 //rota de perfil
 // rota/: -> indica que rota receberá parâmetro obrigatório
