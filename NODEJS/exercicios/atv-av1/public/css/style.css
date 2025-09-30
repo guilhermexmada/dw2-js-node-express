@@ -1,0 +1,52 @@
+header{
+    background-color: #155dfc;
+}
+
+h1, h2{
+    text-align: center;
+    transition: all 1s ease-in-out;
+    margin: 50px;
+}
+
+h2:hover{
+    font-size: 50px;
+    color: #155dfc;
+    user-select: none;
+}
+
+.capa{
+    width: 300px;
+    height: 300px;
+    border-radius: 5%;
+    position: absolute;
+    /*margin: 50px;*/
+    transition: all 500ms ease;
+}
+
+.capa:hover{
+    box-shadow: 10px 10px 10px #ffdf20;
+}
+
+.container-capas{
+    width: 350px;
+    height: 300px;
+    margin: 50px;
+}
+
+.container-capas:hover .capa.first {
+  transform: translateX(-150px) rotate(-21deg);
+  z-index: 3;
+}
+
+.container-capas:hover .capa.second {
+  transform: translateY(-50px) rotate(-3deg);
+  z-index: 2;
+}
+
+.container-capas:hover .capa.third {
+  transform: translateX(120px) rotate(18deg);
+  z-index: 1;
+}
+
+
+

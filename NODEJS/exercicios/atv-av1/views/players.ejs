@@ -1,0 +1,37 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+    <h2 class="mt-5 ">Ranked</h2>
+    <hr>
+    <h3>Top Players Season 10</h3>
+    <table class="table table-bordered table-hover m-5">
+        <thead class="table-dark text-center">
+            <tr>
+                <th>Position</th>
+                <th>Nickname</th>
+                <th>Rank</th>
+                <th>Win</th>
+                <th>Loss</th>
+                <th>Draw</th>
+                <th>Competitive hours</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <!--FOREACH-->
+            <% players.forEach( (player, i) => { %>
+                <tr>
+                    <td><%= i+1 %></td>
+                    <td><%= player.nickname %></td>
+                    <td><%= player.rank %></td> 
+                    <td><%= player.win %></td> 
+                    <td><%= player.loss %></td> 
+                    <td><%= player.drawn %></td> 
+                    <td><%= player.hours %></td> 
+                </tr>
+            <% }) %>
+            
+        </tbody>
+    </table>
+
+
+    <%- include ('partials/footer.ejs') %>

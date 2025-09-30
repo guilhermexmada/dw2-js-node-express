@@ -4,7 +4,7 @@ class Carro{ // nomes de classes devem iniciar em maiúscula
     constructor(marca,modelo,ano){
         // this representa a instância (objeto) e o valor atribuído refere-se aos parâmetros preenchidos na inicialização do objeto
         this.marca = marca;
-        this.modelo = modelo;
+        this.modelo = modelo; 
         this.ano = ano;
     }
     // métodos
