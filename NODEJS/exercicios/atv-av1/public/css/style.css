@@ -2,14 +2,37 @@ header{
     background-color: #155dfc;
 }
 
+body{
+  background: linear-gradient(270deg, #2265bd, #6657c7, #eddd53, #2265bd);
+  background-size: 800% 800%;
+  animation: background 20s ease infinite;
+}
+
+@keyframes background {
+  0%   { background-position: 0% 50%; }
+  25%  { background-position: 50% 50%; }
+  50%  { background-position: 100% 50%; }
+  75%  { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+nav{
+  margin-bottom: 100px;
+}
+
+.container-xl{
+  background-color: white;
+  border-radius: 1%;
+}
+
 h1, h2{
     text-align: center;
     transition: all 1s ease-in-out;
-    margin: 50px;
+    margin: 0px;
 }
 
 h2:hover{
-    font-size: 50px;
+    transform: scale(1.3);
     color: #155dfc;
     user-select: none;
 }
@@ -48,5 +71,56 @@ h2:hover{
   z-index: 1;
 }
 
+.icon{
+  max-width: 200px;
+  height: 150px;
+  margin: 25px;
+  transition: all 500ms ease;
+}
+
+.icon:hover{
+  transform: scale(1.3);
+}
+
+table{
+  user-select: none;
+}
 
 
+tr.purple td{
+  font-weight: bold;
+  background-color: #a3b3ff;
+}
+tr.blue td{
+  font-weight: bold;
+  background-color: #a2f4fd;
+}
+tr.gold td{
+  font-weight: bold;
+  background-color: #fef9c2;
+}
+
+.container-games{
+  width: 1300px;
+  height: 600px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+.card{
+  transition: all 2s ease;
+}
+
+.card:hover{
+    transform: rotateY(20deg) rotateX(10deg) scale(1.3);
+}
+
+.card button:active{
+  transform: scale(0.98);
+  transition: all 500ms ease-out;
+}
+
+/*
+  

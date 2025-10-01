@@ -4,7 +4,7 @@ const app = express(); //Iniciando o Express na vaiavel 'app'
 
 import PlayersController from "./controllers/PlayersController.js" //  importando os Controllers (onde estão as rotas e onde são tratadas as requisições) - precisa da extensão '.js'
 import PedidosController from "./controllers/PedidosController.js" //  importando os Controllers (onde estão as rotas e onde são tratadas as requisições) - precisa da extensão '.js'
-import ProdutosController from "./controllers/ProdutosController.js" //  importando os Controllers (onde estão as rotas e onde são tratadas as requisições) - precisa da extensão '.js'
+import GamesController from "./controllers/GamesController.js" //  importando os Controllers (onde estão as rotas e onde são tratadas as requisições) - precisa da extensão '.js'
 
 // configurando o EJS:
 app.set("view engine", "ejs");
@@ -16,7 +16,7 @@ app.use(express.static("public"));
 
 // definindo o uso das rotas dentro de controllers
 app.use("/", PlayersController);
-app.use("/", ProdutosController);
+app.use("/", GamesController);
 app.use("/", PedidosController);
 
 
@@ -24,7 +24,12 @@ app.use("/", PedidosController);
 // REQ = trata a REQUISIÇÂO
 // RES = trata a RESPOSTA
 app.get("/", (req, res) => {
-  res.render("index");
+  function openAdvise(){
+    return '<div class="alert alert-warning" role="alert"> ⚠️ Nossos serviços de log-in estão indisponíveis no momento! </div>';
+  }
+  res.render("index", {
+    openAdvise: openAdvise,
+  });
 });
 
 

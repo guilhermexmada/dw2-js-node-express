@@ -1,0 +1,39 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+    <img class="icon" src="/imgs/versus.png" alt="Ranked Elo">
+
+    <h2 class="mt-5 ">Next Games</h2>
+    <hr>
+    <!-- <%#= produtos %> -->
+
+    <!-- percorrendo a lista de produtos com ForEach -->
+
+    <div class="container-games">
+
+        <% games.forEach( (game, i) =>{  %>
+
+            <div class="card" style="width: 18rem;">
+            <img src="/imgs/match<%= i == 0 ? 1 : (i == 1 ? 2 : 3) %>.jpg"  class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"> <%= game.teamA %> VS <%= game.teamB %> </h5>
+               <p class="card-text"> <%=  %> </p>
+             </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Date: <%= game.date %></li>
+              <li class="list-group-item">Hour: <%= game.hour %></li>
+              <li class="list-group-item">League: <%= game.league %></li>
+            </ul>
+            <div class="card-body">
+              <button type="button" class="btn btn-outline-success">☝️</button>
+              <button type="button" class="btn btn-outline-warning">👇</button>
+              <button type="button" class="btn btn-outline-danger">📌</button>
+            </div>
+            </div>
+        <% }) %>
+
+        </div>
+
+    <hr>
+
+    <%- include ('partials/footer.ejs') %>
