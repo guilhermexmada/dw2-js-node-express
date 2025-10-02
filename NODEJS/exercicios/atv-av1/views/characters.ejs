@@ -1,0 +1,26 @@
+<%- include('partials/header.ejs') %>
+<%- include('partials/navbar.ejs') %>
+
+     <h2 class="m-5">Legends Gallery</h2>
+    <div class="container-characters">    
+     <% characters.forEach(character => { %>
+
+
+        <div class="card character" style="width: 18rem;">
+            <img src="/imgs/<%= character.image %>.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h3 class="card-text"> <%= character.name %> </h3>
+                <div class="card-text barr" style="width: <%= (character.life)/5 + 50 %>px; background-color: red"> 🤍 <%= character.life %> </div>
+                <div class="card-text barr" style="width: <%= (character.mana)/2 + 50 %>px; background-color: blue"> ✨ <%= character.mana %> </div>
+                <p class="card-text"> 
+                    <% for(i = 0; i < character.stars; i++){ %>
+                        ⭐️
+                    <% } %>
+                 </p>
+            </div>
+        </div>
+     <% }) %>
+    
+     </div>
+
+<%- include ('partials/footer.ejs') %>

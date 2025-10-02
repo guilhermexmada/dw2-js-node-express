@@ -3,7 +3,7 @@ import express from "express"; //importando o Express de acordo com ES6 Modules 
 const app = express(); //Iniciando o Express na vaiavel 'app'
 
 import PlayersController from "./controllers/PlayersController.js" //  importando os Controllers (onde estão as rotas e onde são tratadas as requisições) - precisa da extensão '.js'
-import PedidosController from "./controllers/PedidosController.js" //  importando os Controllers (onde estão as rotas e onde são tratadas as requisições) - precisa da extensão '.js'
+import CharactersController from "./controllers/CharactersController.js" //  importando os Controllers (onde estão as rotas e onde são tratadas as requisições) - precisa da extensão '.js'
 import GamesController from "./controllers/GamesController.js" //  importando os Controllers (onde estão as rotas e onde são tratadas as requisições) - precisa da extensão '.js'
 
 // configurando o EJS:
@@ -17,7 +17,7 @@ app.use(express.static("public"));
 // definindo o uso das rotas dentro de controllers
 app.use("/", PlayersController);
 app.use("/", GamesController);
-app.use("/", PedidosController);
+app.use("/", CharactersController);
 
 
 //criando a primeira rota do site (rota principal):
@@ -25,7 +25,7 @@ app.use("/", PedidosController);
 // RES = trata a RESPOSTA
 app.get("/", (req, res) => {
   function openAdvise(){
-    return '<div class="alert alert-warning" role="alert"> ⚠️ Nossos serviços de log-in estão indisponíveis no momento! </div>';
+    return '<div class="alert alert-warning" role="alert"> ⚠️ Log-in services are out for a moment! </div>';
   }
   res.render("index", {
     openAdvise: openAdvise,
