@@ -19,7 +19,7 @@ const Cliente = connection.define('clientes',{
 });
 
 // Sincronizando a tabela com o banco de dados
-    // {force} indica se força ou não a criação da tabela -> false não cria se a tabela já existe, evitando sobrescrever dados
+    // {force} indica se força ou não a criação da tabela -> false: não cria se a tabela já existe, evitando sobrescrever dados
 Cliente.sync({force:false});
 
 export default Cliente;

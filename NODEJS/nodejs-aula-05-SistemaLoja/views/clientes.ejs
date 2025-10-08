@@ -4,6 +4,27 @@
         <div class="container">
             <div class="card">
                 <div class="card-header">
+                    <h1>Cadastrar clientes</h1>
+                    <div class="card-body">
+                        <!-- Formulário de cadastro -->
+                        <form action="../clientes/new" method="POST"> <!-- Enviando os dados para a rota de cadastro -->
+                            <label for="">Nome do cliente</label>
+                            <input type="text" name="nome" placeholder="Insira o nome do cliente" class="form-control" required>
+                            <label for="">CPF do cliente</label>
+                            <input type="text" name="cpf" placeholder="Insira o CPF" class="form-control" required>
+                            <label for="">Endereço do cliente</label>
+                            <input type="text" name="endereco" placeholder="Insira o endereço" class="form-control mb-4" required>
+                            <input type="submit" class="btn btn-success" value="Cadastrar">
+                            <input type="reset" class="btn btn-danger" value="Limpar">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
                     <h1>Clientes</h1>
                 </div>
                 <div class="card-body">
@@ -14,6 +35,7 @@
                                 <th>Nome:</th>
                                 <th>CPF:</th>
                                 <th>Endereço:</th>
+                                <th colspan="2" style="text-align: center;">Ações:</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -28,6 +50,18 @@
                                     </td>
                                     <td>
                                         <%= cliente.endereco %>
+                                    </td>
+                                    <td>
+                                        <a href="/clientes/edit/<%= cliente.id %>"> <!-- Direcionando para rota de edição com ID do cliente no parâmetro -->
+                                            <button onclick="return confirm('Deseja mesmo editar o cliente <%= cliente.nome %> ?')"
+                                                 class="btn btn-warning">Editar</button>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="/clientes/delete/<%= cliente.id %>"> <!-- Direcionando para rota de exclusão com ID do cliente no parâmetro -->
+                                            <button onclick="return confirm('Deseja mesmo excluir o cliente <%= cliente.nome %> ?')"
+                                                class="btn btn-danger" >Excluir</button>
+                                        </a>
                                     </td>
                                 </tr>
                                 <% }) %>
