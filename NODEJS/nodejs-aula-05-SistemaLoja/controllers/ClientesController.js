@@ -58,6 +58,25 @@ router.get("/clientes/edit/:id", (req,res) => {
   }) 
 });
 
+//  ROTA DE ALTERAÇÃO DE CLIENTES : post pois recebe dados de formulário
+router.post("/clientes/update", (req,res) => {
+  const id = req.body.id;
+  const nome = req.body.nome;
+  const cpf = req.body.cpf;
+  const endereco = req.body.endereco;
+  Cliente.update({ // método update atualiza os dados de um registro a partir de um objeto 
+    nome : nome,
+    cpf : cpf,
+    endereco : endereco
+  },{
+    where : {id : id} //  where da consulta
+  }).then(()=>{
+    res.redirect("/clientes");
+}).catch(error =>{
+    console.log(error);
+});
+});
+
 export default router;
 
 /*
