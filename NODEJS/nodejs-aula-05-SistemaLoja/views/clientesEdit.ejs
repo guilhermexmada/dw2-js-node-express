@@ -16,7 +16,8 @@
                             <label for="">Endereço do cliente</label>
                             <input type="text" name="endereco" value="<%= cliente.endereco %>" placeholder="Insira o endereço" class="form-control mb-4" required>
                             <input onclick="return confirm('Confirma as alterações realizadas para o cliente <%= cliente.nome %> ?')" type="submit" class="btn btn-success" value="Alterar">
-                            <a href="/clientes"><input type="reset" class="btn btn-danger" value="Cancelar"></a>
+                            <input type="reset" class="btn btn-secondary" value="Limpar">
+                            <a href="/clientes"><input type="button" class="btn btn-danger" value="Cancelar"></a>
                         </form>
                     </div>
                 </div>
