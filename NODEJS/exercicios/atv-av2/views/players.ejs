@@ -1,0 +1,44 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+    <img class="icon" src="/imgs/rank.png" alt="Ranked Elo">
+
+    <h2 class="mt-5 ">Ranked</h2>
+    <hr>
+    <h3>Top Players Season 10</h3>
+    <table class="table m-5">
+        <thead class="  text-center">
+            <tr>
+                <th>#</th>
+                <th>Nickname</th>
+                <th>Rank</th>
+                <th>Win</th>
+                <th>Loss</th>
+                <th>Draw</th>
+                <th>Competitive hours</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="table text-center">
+            <!--FOREACH-->
+            <% players.forEach( (player, i) => { %>
+                <tr class="<%= player.rankcolor %>">
+                    <td><%= i+1 %></td>
+                    <td><%= player.nickname %></td>
+                    <td><%= player.rank %></td> 
+                    <td><%= player.win %></td> 
+                    <td><%= player.loss %></td> 
+                    <td><%= player.draw %></td> 
+                    <td><%= player.hours %>h</td> 
+                    <td> <a style="background-color: rgba(0, 0, 0, 0)" href="/players/edit/<%=player.id%>">Edit</a></td> 
+                    <td> <a style="background-color: rgba(0, 0, 0, 0)" href="/players/delete/<%=player.id%>">Remove</a></td> 
+                </tr>
+            <% }) %>
+            
+        </tbody>
+    </table>
+
+    <a href="/players/new"><button class="btn btn-success">Add New Player</button></a>
+
+
+    <%- include ('partials/footer.ejs') %>

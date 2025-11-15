@@ -1,0 +1,37 @@
+<%- include ('partials/header.ejs') %>
+    <%- include ('partials/navbar.ejs') %>
+
+        <img class="icon" src="/imgs/rank.png" alt="Ranked Elo">
+
+        <h2 class="mt-5 ">Ranked</h2>
+        <hr>
+        <h3>Top Players Season 10</h3>
+
+        <form action="/players/update/<%=player.id%>" method="post">
+
+            <input type="hidden" name="id" value="<%= player.id %>" required>
+
+            <label class="form-control" class="form-control" for="name">Nickname</label>
+            <input class="form-control" value="<%= player.nickname %>" type="text" name="nickname" id="">
+
+            <label class="form-control" for="rank">Rank</label>
+            <input class="form-control" value="<%= player.rank %>" type="text" name="rank" id="">
+
+            <label class="form-control" for="win">Win count</label>
+            <input class="form-control" value="<%= player.win %>" type="number" name="win" id="">
+
+            <label class="form-control" for="loss">Loss count</label>
+            <input class="form-control" value="<%= player.loss %>" type="number" name="loss" id="">
+
+            <label class="form-control" for="draw">Draw count</label>
+            <input class="form-control" value="<%= player.draw %>" type="number" name="draw" id="">
+
+            <label class="form-control" for="hours">Hours played</label>
+            <input class="form-control" value="<%= player.hours %>" type="number" name="hours" id="">
+
+            <button class="btn btn-success" type="submit">Save</button>
+            <br>
+            <a href="/players"><button class="btn btn-danger">Cancel</button></a>
+        </form>
+
+        <%- include ('partials/footer.ejs') %>
